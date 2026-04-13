@@ -1,0 +1,40 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: default-networkpolicy
+  annotations:
+    policies.kyverno.io/title: Default Deny Ingress NetworkPolicy
+    policies.kyverno.io/description: >-
+      새 네임스페이스가 생성될 때 기본 Ingress 차단 NetworkPolicy를 자동으로 생성합니다.
+      명시적으로 허용된 트래픽만 수신할 수 있도록 Zero Trust 네트워크 기준선을 설정합니다.
+spec:
+  rules:
+    - name: generate-networkpolicy
+      match:
+        any:
+        - resources:
+            kinds:
+              - Namespace
+      exclude:
+        any:
+        - resources:
+            names:
+              - kube-system
+              - kube-public
+              - kube-node-lease
+              - kyverno
+      generate:
+        apiVersion: networking.k8s.io/v1
+        kind: NetworkPolicy
+        name: default-deny-ingress
+        namespace: "{{ request.object.metadata.name }}"
+        synchronize: true
+        data:
+          metadata:
+            labels:
+              managed-by: kyverno
+          spec:
+            podSelector: {}     # 네임스페이스 내 모든 Pod 대상
+            policyTypes:
+              - Ingress
+            # ingress 항목 없음 = 모든 Ingress 차단

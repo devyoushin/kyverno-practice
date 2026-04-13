@@ -1,0 +1,36 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: copy-registry-configmap
+  annotations:
+    policies.kyverno.io/title: Copy Registry ConfigMap
+    policies.kyverno.io/description: >-
+      새 네임스페이스가 생성될 때 default 네임스페이스의 'registry-config' ConfigMap을
+      해당 네임스페이스로 자동 복사합니다.
+      모든 팀이 동일한 레지스트리 설정을 사용할 수 있도록 보장합니다.
+spec:
+  rules:
+    - name: clone-configmap
+      match:
+        any:
+        - resources:
+            kinds:
+              - Namespace
+      exclude:
+        any:
+        - resources:
+            names:
+              - kube-system
+              - kube-public
+              - kube-node-lease
+              - kyverno
+              - default
+      generate:
+        apiVersion: v1
+        kind: ConfigMap
+        name: registry-config
+        namespace: "{{ request.object.metadata.name }}"
+        synchronize: true
+        clone:
+          namespace: default
+          name: registry-config

@@ -1,0 +1,37 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: add-default-resource-limits
+  annotations:
+    policies.kyverno.io/title: Add Default Resource Limits
+    policies.kyverno.io/description: >-
+      컨테이너에 resource limits가 없을 경우 기본값을 자동으로 주입합니다.
+      이미 limits가 설정된 경우에는 덮어쓰지 않습니다.
+spec:
+  rules:
+    - name: add-limits
+      match:
+        any:
+        - resources:
+            kinds:
+              - Pod
+      exclude:
+        any:
+        - resources:
+            namespaces:
+              - kube-system
+              - kyverno
+      mutate:
+        foreach:
+          - list: "request.object.spec.containers"
+            patchStrategicMerge:
+              spec:
+                containers:
+                  - (name): "{{ element.name }}"
+                    resources:
+                      limits:
+                        +(memory): "256Mi"
+                        +(cpu): "500m"
+                      requests:
+                        +(memory): "128Mi"
+                        +(cpu): "100m"

@@ -1,0 +1,28 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: add-default-labels
+  annotations:
+    policies.kyverno.io/title: Add Default Labels
+    policies.kyverno.io/description: >-
+      Pod에 'managed-by' 레이블이 없을 경우 자동으로 추가합니다.
+      이미 존재하는 레이블은 덮어쓰지 않습니다.
+spec:
+  rules:
+    - name: add-managed-by-label
+      match:
+        any:
+        - resources:
+            kinds:
+              - Pod
+      exclude:
+        any:
+        - resources:
+            namespaces:
+              - kube-system
+              - kyverno
+      mutate:
+        patchStrategicMerge:
+          metadata:
+            labels:
+              +(managed-by): "kyverno"

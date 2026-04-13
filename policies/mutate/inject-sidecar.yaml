@@ -1,0 +1,41 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: inject-logging-sidecar
+  annotations:
+    policies.kyverno.io/title: Inject Logging Sidecar
+    policies.kyverno.io/description: >-
+      'inject-logging: true' 레이블이 있는 Pod에 Fluent Bit 로그 수집 사이드카를 자동으로 주입합니다.
+spec:
+  rules:
+    - name: inject-sidecar
+      match:
+        any:
+        - resources:
+            kinds:
+              - Pod
+            selector:
+              matchLabels:
+                inject-logging: "true"
+      mutate:
+        patchStrategicMerge:
+          spec:
+            containers:
+              - name: log-collector
+                image: fluent/fluent-bit:2.2
+                resources:
+                  limits:
+                    memory: "64Mi"
+                    cpu: "100m"
+                  requests:
+                    memory: "32Mi"
+                    cpu: "50m"
+                volumeMounts:
+                  - name: varlog
+                    mountPath: /var/log
+                    readOnly: true
+            volumes:
+              - name: varlog
+                hostPath:
+                  path: /var/log
+                  type: Directory
