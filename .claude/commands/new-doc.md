@@ -9,7 +9,7 @@
 - 보안: pss, pod-security, rbac
 - 운영: exception, cli, troubleshooting
 
-`<주제명>-guide.md` 생성 시 포함 내용:
+`docs/<주제명>-guide.md` 생성 시 포함 내용:
 - ClusterPolicy/Policy YAML 예시
 - `kyverno test` 또는 `kyverno apply` 검증 예시
 - PolicyReport 확인 명령어

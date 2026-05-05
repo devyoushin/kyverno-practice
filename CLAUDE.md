@@ -21,7 +21,7 @@ kyverno-practice/
 ├── templates/                 # service-doc, runbook, incident-report
 ├── rules/                     # doc-writing, kyverno-conventions, security-checklist, monitoring
 ├── policies/                  # ClusterPolicy YAML 파일
-└── *-guide.md                 # 주제별 가이드 문서
+└── docs/                      # 주제별 가이드 문서
 ```
 
 ---
@@ -42,17 +42,17 @@ kyverno-practice/
 
 | 문서 | 주제 |
 |------|------|
-| `install.md` | Kyverno 설치 (Helm) |
-| `architecture-guide.md` | Kyverno 아키텍처 |
-| `policy-types-guide.md` | 정책 유형 개요 |
-| `validate-policy-guide.md` | validate 정책 |
-| `mutate-policy-guide.md` | mutate 정책 |
-| `generate-policy-guide.md` | generate 정책 |
-| `verify-image-guide.md` | 이미지 서명 검증 |
-| `pss-guide.md` | Pod Security Standards |
-| `exception-guide.md` | PolicyException 처리 |
-| `kyverno-cli-guide.md` | kyverno CLI 활용 |
-| `troubleshooting-guide.md` | 트러블슈팅 |
+| `docs/install.md` | Kyverno 설치 (Helm) |
+| `docs/architecture-guide.md` | Kyverno 아키텍처 |
+| `docs/policy-types-guide.md` | 정책 유형 개요 |
+| `docs/validate-policy-guide.md` | validate 정책 |
+| `docs/mutate-policy-guide.md` | mutate 정책 |
+| `docs/generate-policy-guide.md` | generate 정책 |
+| `docs/verify-image-guide.md` | 이미지 서명 검증 |
+| `docs/pss-guide.md` | Pod Security Standards |
+| `docs/exception-guide.md` | PolicyException 처리 |
+| `docs/kyverno-cli-guide.md` | kyverno CLI 활용 |
+| `docs/troubleshooting-guide.md` | 트러블슈팅 |
 
 ---
 
