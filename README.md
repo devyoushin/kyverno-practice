@@ -10,17 +10,17 @@ A hands-on repository for learning Kyverno on Kubernetes.
 ## Learning Path
 
 ```
-1. Installation    → install.md
-2. Core Concepts   → architecture-guide.md, policy-types-guide.md
+1. Installation    → docs/install.md
+2. Core Concepts   → docs/architecture-guide.md, docs/policy-types-guide.md
 3. Policy Types
-   ├── Validate    → validate-policy-guide.md
-   ├── Mutate      → mutate-policy-guide.md
-   └── Generate    → generate-policy-guide.md
+   ├── Validate    → docs/validate-policy-guide.md
+   ├── Mutate      → docs/mutate-policy-guide.md
+   └── Generate    → docs/generate-policy-guide.md
 4. Advanced
-   ├── Security    → pss-guide.md, verify-image-guide.md
-   └── Exception   → exception-guide.md
-5. CLI & Testing   → kyverno-cli-guide.md
-6. Troubleshooting → troubleshooting-guide.md
+   ├── Security    → docs/pss-guide.md, docs/verify-image-guide.md
+   └── Exception   → docs/exception-guide.md
+5. CLI & Testing   → docs/kyverno-cli-guide.md
+6. Troubleshooting → docs/troubleshooting-guide.md
 ```
 
 ---
