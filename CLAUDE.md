@@ -21,6 +21,8 @@ kyverno-practice/
 ├── templates/                 # service-doc, runbook, incident-report
 ├── rules/                     # doc-writing, kyverno-conventions, security-checklist, monitoring
 ├── policies/                  # ClusterPolicy YAML 파일
+├── examples/                  # 가이드 참조용 예제 K8s 매니페스트 (pods, namespaces, rbac)
+├── tests/                     # kyverno test 명령용 테스트 케이스 (validate, mutate, generate)
 └── docs/                      # 주제별 가이드 문서
 ```
 
