@@ -30,44 +30,44 @@ A hands-on repository for learning Kyverno on Kubernetes.
 ### Installation
 | File | Description |
 |------|-------------|
-| [install.md](./install.md) | Helm으로 Kyverno 설치 및 초기 설정 |
+| [install.md](./docs/install.md) | Helm으로 Kyverno 설치 및 초기 설정 |
 
 ### Core Concepts
 | File | Description |
 |------|-------------|
-| [architecture-guide.md](./architecture-guide.md) | Kyverno 동작 원리 — Admission Webhook 흐름 |
-| [policy-types-guide.md](./policy-types-guide.md) | ClusterPolicy vs Policy, Rule 종류(Validate/Mutate/Generate) |
+| [architecture-guide.md](./docs/architecture-guide.md) | Kyverno 동작 원리 — Admission Webhook 흐름 |
+| [policy-types-guide.md](./docs/policy-types-guide.md) | ClusterPolicy vs Policy, Rule 종류(Validate/Mutate/Generate) |
 
 ### Policy Types
 | File | Description |
 |------|-------------|
-| [validate-policy-guide.md](./validate-policy-guide.md) | Validate — 리소스 검증, 차단/감사(Audit) 모드 |
-| [mutate-policy-guide.md](./mutate-policy-guide.md) | Mutate — 리소스 자동 수정, patchStrategicMerge / patchesJson6902 |
-| [generate-policy-guide.md](./generate-policy-guide.md) | Generate — 리소스 자동 생성, 네임스페이스별 기본 정책 배포 |
+| [validate-policy-guide.md](./docs/validate-policy-guide.md) | Validate — 리소스 검증, 차단/감사(Audit) 모드 |
+| [mutate-policy-guide.md](./docs/mutate-policy-guide.md) | Mutate — 리소스 자동 수정, patchStrategicMerge / patchesJson6902 |
+| [generate-policy-guide.md](./docs/generate-policy-guide.md) | Generate — 리소스 자동 생성, 네임스페이스별 기본 정책 배포 |
 
 ### Advanced
 | File | Description |
 |------|-------------|
-| [pss-guide.md](./pss-guide.md) | Pod Security Standards — Baseline/Restricted 프로파일 적용 |
-| [verify-image-guide.md](./verify-image-guide.md) | Image Verification — Cosign 서명 검증, attestation |
-| [exception-guide.md](./exception-guide.md) | PolicyException — 특정 리소스를 정책에서 예외 처리 |
+| [pss-guide.md](./docs/pss-guide.md) | Pod Security Standards — Baseline/Restricted 프로파일 적용 |
+| [verify-image-guide.md](./docs/verify-image-guide.md) | Image Verification — Cosign 서명 검증, attestation |
+| [exception-guide.md](./docs/exception-guide.md) | PolicyException — 특정 리소스를 정책에서 예외 처리 |
 
 ### CLI & Testing
 | File | Description |
 |------|-------------|
-| [kyverno-cli-guide.md](./kyverno-cli-guide.md) | kyverno CLI — `test`, `apply` 명령으로 로컬 정책 검증 |
+| [kyverno-cli-guide.md](./docs/kyverno-cli-guide.md) | kyverno CLI — `test`, `apply` 명령으로 로컬 정책 검증 |
 
 ### Troubleshooting
 | File | Description |
 |------|-------------|
-| [troubleshooting-guide.md](./troubleshooting-guide.md) | 정책 디버깅, PolicyReport 분석, 자주 발생하는 문제 |
+| [troubleshooting-guide.md](./docs/troubleshooting-guide.md) | 정책 디버깅, PolicyReport 분석, 자주 발생하는 문제 |
 
 ---
 
-## Manifest Structure
+## Directory Structure
 
 ```
-policies/
+policies/                            # Kyverno ClusterPolicy YAML
 ├── validate/
 │   ├── require-labels.yaml          # 필수 레이블 강제
 │   ├── disallow-latest-tag.yaml     # latest 태그 금지
@@ -80,6 +80,16 @@ policies/
 └── generate/
     ├── default-networkpolicy.yaml   # 네임스페이스 생성 시 NetworkPolicy 자동 생성
     └── copy-configmap.yaml          # ConfigMap을 신규 네임스페이스에 복사
+
+examples/                            # 가이드에서 참조하는 예제 K8s 매니페스트
+├── pods/                            # Pod, Deployment 예제
+├── namespaces/                      # Namespace 예제
+└── rbac/                            # ServiceAccount, Role, RoleBinding 예제
+
+tests/                               # kyverno test 명령용 테스트 케이스
+├── validate/                        # validate 정책 테스트
+├── mutate/                          # mutate 정책 테스트
+└── generate/                        # generate 정책 테스트
 ```
 
 ---
