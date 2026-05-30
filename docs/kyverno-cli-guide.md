@@ -30,15 +30,15 @@ kyverno version
 
 ```bash
 # 단일 정책, 단일 리소스
-kyverno apply policies/validate/require-labels.yaml \
+kyverno apply ops/policies/validate/require-labels.yaml \
   --resource manifests/pod.yaml
 
 # 여러 정책을 디렉토리로 지정
-kyverno apply policies/validate/ \
+kyverno apply ops/policies/validate/ \
   --resource manifests/pod.yaml
 
 # 여러 리소스 파일
-kyverno apply policies/ \
+kyverno apply ops/policies/ \
   --resource manifests/
 ```
 
@@ -111,13 +111,13 @@ results:
 
 ```bash
 # 단일 테스트 디렉토리 실행
-kyverno test tests/
+kyverno test ops/tests/
 
 # 상세 출력
-kyverno test tests/ --detailed-results
+kyverno test ops/tests/ --detailed-results
 
 # 예상 결과와 다른 경우만 출력
-kyverno test tests/ --fail-only
+kyverno test ops/tests/ --fail-only
 ```
 
 ### 출력 예시
@@ -168,10 +168,10 @@ jobs:
           sudo mv kyverno /usr/local/bin/
 
       - name: Run Kyverno tests
-        run: kyverno test tests/ --detailed-results
+        run: kyverno test ops/tests/ --detailed-results
 
       - name: Validate manifests against policies
-        run: kyverno apply policies/ --resource manifests/ --detailed-results
+        run: kyverno apply ops/policies/ --resource manifests/ --detailed-results
 ```
 
 ---

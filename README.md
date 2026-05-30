@@ -67,7 +67,7 @@ A hands-on repository for learning Kyverno on Kubernetes.
 ## Directory Structure
 
 ```
-policies/                            # Kyverno ClusterPolicy YAML
+ops/policies/                            # Kyverno ClusterPolicy YAML
 ├── validate/
 │   ├── require-labels.yaml          # 필수 레이블 강제
 │   ├── disallow-latest-tag.yaml     # latest 태그 금지
@@ -81,12 +81,12 @@ policies/                            # Kyverno ClusterPolicy YAML
     ├── default-networkpolicy.yaml   # 네임스페이스 생성 시 NetworkPolicy 자동 생성
     └── copy-configmap.yaml          # ConfigMap을 신규 네임스페이스에 복사
 
-examples/                            # 가이드에서 참조하는 예제 K8s 매니페스트
+ops/examples/                            # 가이드에서 참조하는 예제 K8s 매니페스트
 ├── pods/                            # Pod, Deployment 예제
 ├── namespaces/                      # Namespace 예제
 └── rbac/                            # ServiceAccount, Role, RoleBinding 예제
 
-tests/                               # kyverno test 명령용 테스트 케이스
+ops/tests/                               # kyverno test 명령용 테스트 케이스
 ├── validate/                        # validate 정책 테스트
 ├── mutate/                          # mutate 정책 테스트
 └── generate/                        # generate 정책 테스트

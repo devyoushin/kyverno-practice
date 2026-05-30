@@ -17,12 +17,12 @@ kyverno-practice/
 ├── .claude/
 │   ├── settings.json
 │   └── commands/              # /new-doc, /new-runbook, /review-doc, /add-troubleshooting, /search-kb
-├── agents/                    # doc-writer, policy-designer, security-auditor, troubleshooter
-├── templates/                 # service-doc, runbook, incident-report
-├── rules/                     # doc-writing, kyverno-conventions, security-checklist, monitoring
-├── policies/                  # ClusterPolicy YAML 파일
-├── examples/                  # 가이드 참조용 예제 K8s 매니페스트 (pods, namespaces, rbac)
-├── tests/                     # kyverno test 명령용 테스트 케이스 (validate, mutate, generate)
+├── docs/agents/                    # doc-writer, policy-designer, security-auditor, troubleshooter
+├── docs/templates/                 # service-doc, runbook, incident-report
+├── docs/rules/                     # doc-writing, kyverno-conventions, security-checklist, monitoring
+├── ops/policies/                  # ClusterPolicy YAML 파일
+├── ops/examples/                  # 가이드 참조용 예제 K8s 매니페스트 (pods, namespaces, rbac)
+├── ops/tests/                     # kyverno test 명령용 테스트 케이스 (validate, mutate, generate)
 └── docs/                      # 주제별 가이드 문서
 ```
 
@@ -34,7 +34,7 @@ kyverno-practice/
 |--------|------|---------|
 | `/new-doc` | 새 정책 가이드 생성 | `/new-doc image-signing-policy` |
 | `/new-runbook` | 새 런북 생성 | `/new-runbook 신규 정책 프로덕션 배포` |
-| `/review-doc` | 정책/문서 검토 | `/review-doc policies/require-labels.yaml` |
+| `/review-doc` | 정책/문서 검토 | `/review-doc ops/policies/require-labels.yaml` |
 | `/add-troubleshooting` | 트러블슈팅 케이스 추가 | `/add-troubleshooting Pod 생성 차단` |
 | `/search-kb` | 지식베이스 검색 | `/search-kb 이미지 서명 검증` |
 
@@ -62,7 +62,7 @@ kyverno-practice/
 
 ```bash
 # 1. Audit 모드로 배포
-kubectl apply -f policies/
+kubectl apply -f ops/policies/
 
 # 2. 위반 현황 확인
 kubectl get policyreport -A

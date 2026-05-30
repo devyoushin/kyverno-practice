@@ -87,7 +87,7 @@ kubectl run test --image=nginx -v=8 2>&1 | grep "admission webhook"
 kubectl logs -n kyverno -l app.kubernetes.io/component=admission-controller --tail=100 | grep -i "deny\|block\|fail"
 
 # 특정 리소스에 어떤 정책이 걸리는지 확인 (kyverno CLI)
-kyverno apply policies/ --resource <your-pod.yaml> --detailed-results
+kyverno apply ops/policies/ --resource <your-pod.yaml> --detailed-results
 ```
 
 ---

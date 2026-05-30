@@ -177,7 +177,7 @@ spec:
 
 ```bash
 # 1. Generate 정책 적용
-kubectl apply -f policies/generate/default-networkpolicy.yaml
+kubectl apply -f ops/policies/generate/default-networkpolicy.yaml
 
 # 2. 새 네임스페이스 생성
 kubectl create namespace test-team

@@ -192,7 +192,7 @@ spec:
 
 ```bash
 # 정책 적용
-kubectl apply -f policies/mutate/add-labels.yaml
+kubectl apply -f ops/policies/mutate/add-labels.yaml
 
 # 테스트 Pod 생성
 kubectl run test-pod --image=nginx:1.25

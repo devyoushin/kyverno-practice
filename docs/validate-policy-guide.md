@@ -167,7 +167,7 @@ kubectl get policyreport -n default -o json \
 
 ```bash
 # 1. 정책 적용
-kubectl apply -f policies/validate/require-labels.yaml
+kubectl apply -f ops/policies/validate/require-labels.yaml
 
 # 2. 위반하는 Pod 생성 시도
 kubectl run test-pod --image=nginx
