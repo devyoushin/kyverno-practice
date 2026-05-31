@@ -7,6 +7,23 @@ A hands-on repository for learning Kyverno on Kubernetes.
 
 ---
 
+## 어디서 시작할까
+
+- 문서 지도: `docs/README.md`
+- 첫 문서: `docs/install.md`
+- 운영 보조 자료: `ops/README.md`
+- AI 작업 지침: `CLAUDE.md`
+
+## 구조
+
+| 경로 | 내용 |
+|------|------|
+| `docs/` | 설치, 정책 유형, CLI, 보안, 트러블슈팅 문서 |
+| `ops/` | Kyverno 정책, 테스트 케이스, Kubernetes 예제 리소스 |
+| `CLAUDE.md` | 이 레포에서 Claude가 참고할 작업 지침 |
+
+---
+
 ## Learning Path
 
 ```
@@ -64,7 +81,7 @@ A hands-on repository for learning Kyverno on Kubernetes.
 
 ---
 
-## Directory Structure
+## 상세 구조
 
 ```
 ops/policies/                            # Kyverno ClusterPolicy YAML
