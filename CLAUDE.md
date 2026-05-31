@@ -14,17 +14,21 @@
 ```
 kyverno-practice/
 ├── CLAUDE.md                  # 이 파일 (자동 로드)
-├── .claude/
-│   ├── settings.json
-│   └── commands/              # /new-doc, /new-runbook, /review-doc, /add-troubleshooting, /search-kb
-├── docs/agents/                    # doc-writer, policy-designer, security-auditor, troubleshooter
-├── docs/templates/                 # service-doc, runbook, incident-report
-├── docs/rules/                     # doc-writing, kyverno-conventions, security-checklist, monitoring
-├── ops/policies/                  # ClusterPolicy YAML 파일
-├── ops/examples/                  # 가이드 참조용 예제 K8s 매니페스트 (pods, namespaces, rbac)
-├── ops/tests/                     # kyverno test 명령용 테스트 케이스 (validate, mutate, generate)
-└── docs/                      # 주제별 가이드 문서
+├── AGENTS.md -> CLAUDE.md     # Codex 작업 지침 링크
+├── docs/
+│   ├── README.md              # 문서 지도
+│   ├── guides/                # 설치, 정책 유형, CLI, 보안, 트러블슈팅 가이드
+│   ├── agents/                # doc-writer, policy-designer, security-auditor, troubleshooter
+│   ├── templates/             # service-doc, runbook, incident-report
+│   └── rules/                 # doc-writing, kyverno-conventions, security-checklist, monitoring
+├── ops/install/               # Helm 설치 스크립트와 values
+├── ops/upgrade/               # Helm 업그레이드 스크립트
+├── ops/policies/              # ClusterPolicy YAML 파일
+├── ops/examples/              # 가이드 참조용 예제 K8s 매니페스트
+└── ops/tests/                 # kyverno test 명령용 테스트 케이스
 ```
+
+AI 작업 지침은 `CLAUDE.md`를 원본으로 관리하고, `AGENTS.md`는 심볼릭 링크로만 유지합니다.
 
 ---
 
@@ -44,17 +48,17 @@ kyverno-practice/
 
 | 문서 | 주제 |
 |------|------|
-| `docs/install.md` | Kyverno 설치 (Helm) |
-| `docs/architecture-guide.md` | Kyverno 아키텍처 |
-| `docs/policy-types-guide.md` | 정책 유형 개요 |
-| `docs/validate-policy-guide.md` | validate 정책 |
-| `docs/mutate-policy-guide.md` | mutate 정책 |
-| `docs/generate-policy-guide.md` | generate 정책 |
-| `docs/verify-image-guide.md` | 이미지 서명 검증 |
-| `docs/pss-guide.md` | Pod Security Standards |
-| `docs/exception-guide.md` | PolicyException 처리 |
-| `docs/kyverno-cli-guide.md` | kyverno CLI 활용 |
-| `docs/troubleshooting-guide.md` | 트러블슈팅 |
+| `docs/guides/install.md` | Kyverno 설치 (Helm) |
+| `docs/guides/architecture-guide.md` | Kyverno 아키텍처 |
+| `docs/guides/policy-types-guide.md` | 정책 유형 개요 |
+| `docs/guides/validate-policy-guide.md` | validate 정책 |
+| `docs/guides/mutate-policy-guide.md` | mutate 정책 |
+| `docs/guides/generate-policy-guide.md` | generate 정책 |
+| `docs/guides/verify-image-guide.md` | 이미지 서명 검증 |
+| `docs/guides/pss-guide.md` | Pod Security Standards |
+| `docs/guides/exception-guide.md` | PolicyException 처리 |
+| `docs/guides/kyverno-cli-guide.md` | kyverno CLI 활용 |
+| `docs/guides/troubleshooting-guide.md` | 트러블슈팅 |
 
 ---
 

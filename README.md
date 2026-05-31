@@ -10,34 +10,37 @@ A hands-on repository for learning Kyverno on Kubernetes.
 ## 어디서 시작할까
 
 - 문서 지도: `docs/README.md`
-- 첫 문서: `docs/install.md`
+- 첫 문서: `docs/guides/install.md`
 - 운영 보조 자료: `ops/README.md`
 - AI 작업 지침: `CLAUDE.md`
+- Codex 작업 지침: `AGENTS.md` → `CLAUDE.md`
 
 ## 구조
 
 | 경로 | 내용 |
 |------|------|
-| `docs/` | 설치, 정책 유형, CLI, 보안, 트러블슈팅 문서 |
+| `docs/` | 가이드 문서, AI 작업 보조 자료, 작성 규칙, 템플릿 |
+| `docs/guides/` | 설치, 정책 유형, CLI, 보안, 트러블슈팅 가이드 |
 | `ops/` | Kyverno 정책, 테스트 케이스, Kubernetes 예제 리소스 |
-| `CLAUDE.md` | 이 레포에서 Claude가 참고할 작업 지침 |
+| `CLAUDE.md` | Claude/Codex 공통 작업 지침 원본 |
+| `AGENTS.md` | `CLAUDE.md` 심볼릭 링크 |
 
 ---
 
 ## Learning Path
 
 ```
-1. Installation    → docs/install.md
-2. Core Concepts   → docs/architecture-guide.md, docs/policy-types-guide.md
+1. Installation    → docs/guides/install.md
+2. Core Concepts   → docs/guides/architecture-guide.md, docs/guides/policy-types-guide.md
 3. Policy Types
-   ├── Validate    → docs/validate-policy-guide.md
-   ├── Mutate      → docs/mutate-policy-guide.md
-   └── Generate    → docs/generate-policy-guide.md
+   ├── Validate    → docs/guides/validate-policy-guide.md
+   ├── Mutate      → docs/guides/mutate-policy-guide.md
+   └── Generate    → docs/guides/generate-policy-guide.md
 4. Advanced
-   ├── Security    → docs/pss-guide.md, docs/verify-image-guide.md
-   └── Exception   → docs/exception-guide.md
-5. CLI & Testing   → docs/kyverno-cli-guide.md
-6. Troubleshooting → docs/troubleshooting-guide.md
+   ├── Security    → docs/guides/pss-guide.md, docs/guides/verify-image-guide.md
+   └── Exception   → docs/guides/exception-guide.md
+5. CLI & Testing   → docs/guides/kyverno-cli-guide.md
+6. Troubleshooting → docs/guides/troubleshooting-guide.md
 ```
 
 ---
@@ -47,37 +50,37 @@ A hands-on repository for learning Kyverno on Kubernetes.
 ### Installation
 | File | Description |
 |------|-------------|
-| [install.md](./docs/install.md) | Helm으로 Kyverno 설치 및 초기 설정 |
+| [install.md](./docs/guides/install.md) | Helm으로 Kyverno 설치 및 초기 설정 |
 
 ### Core Concepts
 | File | Description |
 |------|-------------|
-| [architecture-guide.md](./docs/architecture-guide.md) | Kyverno 동작 원리 — Admission Webhook 흐름 |
-| [policy-types-guide.md](./docs/policy-types-guide.md) | ClusterPolicy vs Policy, Rule 종류(Validate/Mutate/Generate) |
+| [architecture-guide.md](./docs/guides/architecture-guide.md) | Kyverno 동작 원리 — Admission Webhook 흐름 |
+| [policy-types-guide.md](./docs/guides/policy-types-guide.md) | ClusterPolicy vs Policy, Rule 종류(Validate/Mutate/Generate) |
 
 ### Policy Types
 | File | Description |
 |------|-------------|
-| [validate-policy-guide.md](./docs/validate-policy-guide.md) | Validate — 리소스 검증, 차단/감사(Audit) 모드 |
-| [mutate-policy-guide.md](./docs/mutate-policy-guide.md) | Mutate — 리소스 자동 수정, patchStrategicMerge / patchesJson6902 |
-| [generate-policy-guide.md](./docs/generate-policy-guide.md) | Generate — 리소스 자동 생성, 네임스페이스별 기본 정책 배포 |
+| [validate-policy-guide.md](./docs/guides/validate-policy-guide.md) | Validate — 리소스 검증, 차단/감사(Audit) 모드 |
+| [mutate-policy-guide.md](./docs/guides/mutate-policy-guide.md) | Mutate — 리소스 자동 수정, patchStrategicMerge / patchesJson6902 |
+| [generate-policy-guide.md](./docs/guides/generate-policy-guide.md) | Generate — 리소스 자동 생성, 네임스페이스별 기본 정책 배포 |
 
 ### Advanced
 | File | Description |
 |------|-------------|
-| [pss-guide.md](./docs/pss-guide.md) | Pod Security Standards — Baseline/Restricted 프로파일 적용 |
-| [verify-image-guide.md](./docs/verify-image-guide.md) | Image Verification — Cosign 서명 검증, attestation |
-| [exception-guide.md](./docs/exception-guide.md) | PolicyException — 특정 리소스를 정책에서 예외 처리 |
+| [pss-guide.md](./docs/guides/pss-guide.md) | Pod Security Standards — Baseline/Restricted 프로파일 적용 |
+| [verify-image-guide.md](./docs/guides/verify-image-guide.md) | Image Verification — Cosign 서명 검증, attestation |
+| [exception-guide.md](./docs/guides/exception-guide.md) | PolicyException — 특정 리소스를 정책에서 예외 처리 |
 
 ### CLI & Testing
 | File | Description |
 |------|-------------|
-| [kyverno-cli-guide.md](./docs/kyverno-cli-guide.md) | kyverno CLI — `test`, `apply` 명령으로 로컬 정책 검증 |
+| [kyverno-cli-guide.md](./docs/guides/kyverno-cli-guide.md) | kyverno CLI — `test`, `apply` 명령으로 로컬 정책 검증 |
 
 ### Troubleshooting
 | File | Description |
 |------|-------------|
-| [troubleshooting-guide.md](./docs/troubleshooting-guide.md) | 정책 디버깅, PolicyReport 분석, 자주 발생하는 문제 |
+| [troubleshooting-guide.md](./docs/guides/troubleshooting-guide.md) | 정책 디버깅, PolicyReport 분석, 자주 발생하는 문제 |
 
 ---
 
