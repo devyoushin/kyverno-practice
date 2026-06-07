@@ -17,6 +17,7 @@ Kyverno 학습 문서와 AI 작업 보조 자료를 관리합니다.
 |------|------|
 | `guides/README.md` | 가이드 읽는 순서 |
 | `guides/install.md` | Helm 기반 설치 |
+| `install/upgrade/` | Helm 기반 Kyverno 업그레이드 |
 | `guides/architecture-guide.md` | 아키텍처와 동작 방식 |
 | `guides/policy-types-guide.md` | 정책 유형 |
 | `guides/validate-policy-guide.md` | validate 정책 |
@@ -39,3 +40,4 @@ Kyverno 학습 문서와 AI 작업 보조 자료를 관리합니다.
 | `../ops/tests/` | `kyverno test`용 테스트 케이스 |
 
 처음 읽을 문서는 `guides/install.md`입니다.
+업그레이드 절차는 `install/upgrade/`입니다.
