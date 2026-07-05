@@ -21,7 +21,7 @@ kyverno-practice/
 │   ├── agents/                # doc-writer, policy-designer, security-auditor, troubleshooter
 │   ├── templates/             # service-doc, runbook, incident-report
 │   └── rules/                 # doc-writing, kyverno-conventions, security-checklist, monitoring
-├── ops/install/               # Helm 설치 스크립트와 values
+├── ops/01-installation/               # Helm 설치 스크립트와 values
 ├── ops/upgrade/               # Helm 업그레이드 스크립트
 ├── ops/policies/              # ClusterPolicy YAML 파일
 ├── ops/examples/              # 가이드 참조용 예제 K8s 매니페스트
@@ -48,17 +48,17 @@ AI 작업 지침은 `CLAUDE.md`를 원본으로 관리하고, `AGENTS.md`는 심
 
 | 문서 | 주제 |
 |------|------|
-| `docs/guides/install.md` | Kyverno 설치 (Helm) |
-| `docs/guides/architecture-guide.md` | Kyverno 아키텍처 |
-| `docs/guides/policy-types-guide.md` | 정책 유형 개요 |
-| `docs/guides/validate-policy-guide.md` | validate 정책 |
-| `docs/guides/mutate-policy-guide.md` | mutate 정책 |
-| `docs/guides/generate-policy-guide.md` | generate 정책 |
-| `docs/guides/verify-image-guide.md` | 이미지 서명 검증 |
-| `docs/guides/pss-guide.md` | Pod Security Standards |
-| `docs/guides/exception-guide.md` | PolicyException 처리 |
-| `docs/guides/kyverno-cli-guide.md` | kyverno CLI 활용 |
-| `docs/guides/troubleshooting-guide.md` | 트러블슈팅 |
+| `docs/02-guides/install.md` | Kyverno 설치 (Helm) |
+| `docs/02-guides/architecture-guide.md` | Kyverno 아키텍처 |
+| `docs/02-guides/policy-types-guide.md` | 정책 유형 개요 |
+| `docs/02-guides/validate-policy-guide.md` | validate 정책 |
+| `docs/02-guides/mutate-policy-guide.md` | mutate 정책 |
+| `docs/02-guides/generate-policy-guide.md` | generate 정책 |
+| `docs/02-guides/verify-image-guide.md` | 이미지 서명 검증 |
+| `docs/02-guides/pss-guide.md` | Pod Security Standards |
+| `docs/02-guides/exception-guide.md` | PolicyException 처리 |
+| `docs/02-guides/kyverno-cli-guide.md` | kyverno CLI 활용 |
+| `docs/02-guides/troubleshooting-guide.md` | 트러블슈팅 |
 
 ---
 

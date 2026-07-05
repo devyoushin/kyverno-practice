@@ -115,7 +115,7 @@ kubectl port-forward svc/policy-reporter-ui 8082:8080 -n policy-reporter
 ## 7. 업그레이드 및 제거
 ---
 
-상세 업그레이드 절차와 스크립트 실행 방법은 [Kyverno 업그레이드 가이드](../install/upgrade/)를 참고합니다.
+상세 업그레이드 절차와 스크립트 실행 방법은 [Kyverno 업그레이드 가이드](../01-installation/upgrade/)를 참고합니다.
 
 ```bash
 # 업그레이드

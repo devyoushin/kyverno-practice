@@ -33,7 +33,7 @@ helm repo update kyverno
 helm upgrade kyverno kyverno/kyverno \
   --namespace ${KYVERNO_NAMESPACE} \
   --version ${TARGET_VERSION} \
-  --values ops/install/kyverno-values.yaml \
+  --values ops/01-installation/kyverno-values.yaml \
   --wait
 ```
 

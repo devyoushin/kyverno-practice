@@ -1,43 +1,11 @@
-# Kyverno Docs
+# kyverno-practice 문서
 
-Kyverno 학습 문서와 AI 작업 보조 자료를 관리합니다.
+이 디렉토리는 주제별 번호 체계로 문서를 정리합니다. 앞 번호는 학습과 운영 흐름을 나타내며, 90번대는 저장소 관리용 문서입니다.
 
-## 구성
+## 문서 구조
 
-| 폴더 | 내용 |
-|------|------|
-| `guides/` | 설치, 정책 유형, CLI, 보안, 트러블슈팅 가이드 |
-| `agents/` | 문서 작성, 정책 설계, 보안 감사, 트러블슈팅 AI 작업 지침 |
-| `rules/` | 문서 작성 규칙, Kyverno 컨벤션, 보안/모니터링 체크리스트 |
-| `templates/` | 서비스 문서, 런북, 장애 보고서 템플릿 |
-
-## 가이드 문서
-
-| 문서 | 내용 |
-|------|------|
-| `guides/README.md` | 가이드 읽는 순서 |
-| `guides/install.md` | Helm 기반 설치 |
-| `install/upgrade/` | Helm 기반 Kyverno 업그레이드 |
-| `guides/architecture-guide.md` | 아키텍처와 동작 방식 |
-| `guides/policy-types-guide.md` | 정책 유형 |
-| `guides/validate-policy-guide.md` | validate 정책 |
-| `guides/mutate-policy-guide.md` | mutate 정책 |
-| `guides/generate-policy-guide.md` | generate 정책 |
-| `guides/exception-guide.md` | 예외 처리 |
-| `guides/verify-image-guide.md` | 이미지 검증 |
-| `guides/pss-guide.md` | Pod Security Standards |
-| `guides/kyverno-cli-guide.md` | Kyverno CLI |
-| `guides/troubleshooting-guide.md` | 문제 해결 |
-
-## 코드 위치
-
-| 경로 | 내용 |
-|------|------|
-| `../ops/install/` | Helm 설치 스크립트와 values |
-| `../ops/upgrade/` | Helm 업그레이드 스크립트 |
-| `../ops/policies/` | validate, mutate, generate ClusterPolicy YAML |
-| `../ops/examples/` | 정책 검증용 Kubernetes 리소스 예제 |
-| `../ops/tests/` | `kyverno test`용 테스트 케이스 |
-
-처음 읽을 문서는 `guides/install.md`입니다.
-업그레이드 절차는 `install/upgrade/`입니다.
+- [01-installation](./01-installation/): Kyverno 설치와 업그레이드 - Kyverno 설치, 업그레이드, 실행 환경 준비 문서를 모읍니다.
+- [02-guides](./02-guides/): Kyverno 정책 가이드 - 정책 유형, 생성, 검증, 예외, CLI, 문제 해결 문서를 모읍니다.
+- [90-standards](./90-standards/): 문서 작성 표준 - 저장소 문서 작성 규칙과 운영 기준을 관리합니다.
+- [91-templates](./91-templates/): 문서 템플릿 - 반복해서 사용하는 문서 템플릿을 관리합니다.
+- [99-agents](./99-agents/): AI 에이전트 가이드 - 정책 설계와 문서화에 활용할 에이전트 역할 정의를 관리합니다.
